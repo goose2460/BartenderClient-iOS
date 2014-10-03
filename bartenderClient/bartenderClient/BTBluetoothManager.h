@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreBluetooth/CoreBluetooth.h>
+#import "LGBluetooth.h"
 
-@interface BTBluetoothManager : NSObject<CBCentralManagerDelegate,CBPeripheralDelegate>
+@interface BTBluetoothManager : NSObject
 
 +(BTBluetoothManager*)sharedInstance;
 

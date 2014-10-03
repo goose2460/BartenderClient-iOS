@@ -1,0 +1,3 @@
+[submodule "Submodules/LGBluetooth"]
+	path = Submodules/LGBluetooth
+	url = https://github.com/bartender-robot/LGBluetooth
