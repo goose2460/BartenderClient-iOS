@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "BTBluetoothManager.h"
 
 @interface ViewController ()
 
@@ -16,12 +17,17 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [BTBluetoothManager sharedInstance];
     // Do any additional setup after loading the view, typically from a nib.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)buttonPress:(id)sender{
+    [[BTBluetoothManager sharedInstance] attemptBluetoothConnection];
 }
 
 @end
