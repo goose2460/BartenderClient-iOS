@@ -101,7 +101,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s9j-kR-ouA">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s9j-kR-ouA">
                                                     <rect key="frame" x="0.0" y="28" width="125" height="74"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <string key="text">Watermelon
@@ -135,16 +135,29 @@ Spritz</string>
                                     <outlet property="delegate" destination="bk5-Lu-29Z" id="rxm-7Q-cJW"/>
                                 </connections>
                             </collectionView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDc-N9-64z">
+                                <rect key="frame" x="214" y="227" width="172" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Cey-A3-1Qi"/>
+                                    <constraint firstAttribute="width" constant="172" id="MTl-hg-xfx"/>
+                                </constraints>
+                                <state key="normal" title="Create X Ingredient Drink">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="vDc-N9-64z" firstAttribute="top" secondItem="ndh-yV-FsV" secondAttribute="bottom" constant="207" id="Naz-Fx-L9M"/>
                             <constraint firstItem="PMk-q9-HaQ" firstAttribute="top" secondItem="eh4-t7-K2N" secondAttribute="bottom" id="cPx-cd-FBn"/>
                             <constraint firstItem="eh4-t7-K2N" firstAttribute="top" secondItem="ndh-yV-FsV" secondAttribute="bottom" constant="405" id="fzV-dM-Skr"/>
                             <constraint firstItem="eh4-t7-K2N" firstAttribute="leading" secondItem="pws-ft-zak" secondAttribute="leadingMargin" constant="-16" id="g8E-aV-1Ib"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eh4-t7-K2N" secondAttribute="trailing" constant="-16" id="g8G-Rd-q0j"/>
+                            <constraint firstItem="vDc-N9-64z" firstAttribute="centerX" secondItem="eh4-t7-K2N" secondAttribute="centerX" id="ksy-b6-e7l"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="createDrinkButton" destination="vDc-N9-64z" id="Lcb-AV-UPO"/>
                         <outlet property="drinkSelectionCollectionView" destination="eh4-t7-K2N" id="fQI-vu-tSV"/>
                     </connections>
                 </viewController>

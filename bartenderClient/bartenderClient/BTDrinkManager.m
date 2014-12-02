@@ -7,13 +7,13 @@
 //
 
 #import "BTDrinkManager.h"
-#import "BTDrink.h"
 #import "UIColor+BTPalette.h"
 
 @implementation BTDrinkManager
 static BTDrinkManager* gSharedInstance = nil;
 
 NSMutableArray *drinkArray;
+NSMutableArray *selectedDrinkArray;
 
 +(BTDrinkManager*)sharedInstance {
     if (!gSharedInstance) {
@@ -42,6 +42,23 @@ NSMutableArray *drinkArray;
         }
     }
     return drinkArray;
+}
+
+- (NSArray *)getSelectedDrinkList{
+    return selectedDrinkArray;
+}
+
+-(void)addDrinkToSelectedList:(BTDrink*)drink{
+    if (!selectedDrinkArray){
+        selectedDrinkArray = [NSMutableArray new];
+    }
+    if (![selectedDrinkArray containsObject:drink]){
+        [selectedDrinkArray addObject:drink];
+    }
+}
+
+-(void)createDrink{
+    //bluetooth code here
 }
 
 @end

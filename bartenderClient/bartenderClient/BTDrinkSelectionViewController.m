@@ -14,6 +14,7 @@
 
 @interface BTDrinkSelectionViewController (){
     IBOutlet UICollectionView *drinkSelectionCollectionView;
+    IBOutlet UIButton *createDrinkButton;
 }
 
 @end
@@ -42,6 +43,15 @@
     cell.backgroundColor = drink.color;
     cell.titleTextView.text = drink.name;
     return cell;
+}
+
+#pragma mark collection view delegate
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    NSArray *drinkList = [[BTDrinkManager sharedInstance] getDrinkList];
+    [[BTDrinkManager sharedInstance] addDrinkToSelectedList:[drinkList objectAtIndex:indexPath.row]];
+    [createDrinkButton setTitle:[NSString stringWithFormat:@"Create %d Ingredient Drink",[[[BTDrinkManager sharedInstance] getSelectedDrinkList] count]] forState:UIControlStateNormal];
+    
 }
 
 @end

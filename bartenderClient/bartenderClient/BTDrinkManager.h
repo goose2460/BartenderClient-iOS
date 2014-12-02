@@ -7,10 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BTDrink.h"
 
 @interface BTDrinkManager : NSObject
 
 + (BTDrinkManager*)sharedInstance;
 -(NSArray*)getDrinkList;
+-(NSArray*)getSelectedDrinkList;
+-(void)addDrinkToSelectedList:(BTDrink*)drink;
+-(void)createDrink;
 
 @end
