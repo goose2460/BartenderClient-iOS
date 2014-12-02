@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Drinks</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>1</string>
+			<key>Color</key>
+			<string>BTOrange</string>
+			<key>Name</key>
+			<string>Orange Dream</string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>2</string>
+			<key>Color</key>
+			<string>BTBlue</string>
+			<key>Name</key>
+			<string>Blue Razz</string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>3</string>
+			<key>Color</key>
+			<string>BTRed</string>
+			<key>Name</key>
+			<string>Cherry Infusion</string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>4</string>
+			<key>Color</key>
+			<string>BTGreen</string>
+			<key>Name</key>
+			<string>Watermelon Blast</string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>5</string>
+			<key>Color</key>
+			<string>BTYellow</string>
+			<key>Name</key>
+			<string>Lemon Spritz</string>
+		</dict>
+	</array>
+</dict>
+</plist>

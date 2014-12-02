@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7235ADDA1A2D1B0B000D3F89 /* BTDrink.m in Sources */ = {isa = PBXBuildFile; fileRef = 7235ADD91A2D1B0B000D3F89 /* BTDrink.m */; };
+		7295171B1A2D55E800F2CC53 /* BTDrinkSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7295171A1A2D55E800F2CC53 /* BTDrinkSelectionViewController.m */; };
+		729517221A2D57BD00F2CC53 /* BTDrinkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 729517211A2D57BD00F2CC53 /* BTDrinkCell.m */; };
+		729517251A2D5B8A00F2CC53 /* BTDrinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 729517241A2D5B8A00F2CC53 /* BTDrinkManager.m */; };
+		729517271A2D5C6700F2CC53 /* DrinkList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 729517261A2D5C6700F2CC53 /* DrinkList.plist */; };
 		72989FB119DF61E100AE602B /* CBUUID+StringExtraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 72989FA519DF61E100AE602B /* CBUUID+StringExtraction.m */; };
 		72989FB219DF61E100AE602B /* LGCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 72989FA819DF61E100AE602B /* LGCentralManager.m */; };
 		72989FB319DF61E100AE602B /* LGCharacteristic.m in Sources */ = {isa = PBXBuildFile; fileRef = 72989FAA19DF61E100AE602B /* LGCharacteristic.m */; };
@@ -35,6 +40,16 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7235ADD81A2D1B0B000D3F89 /* BTDrink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDrink.h; sourceTree = "<group>"; };
+		7235ADD91A2D1B0B000D3F89 /* BTDrink.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDrink.m; sourceTree = "<group>"; };
+		7235ADDC1A2D1BB9000D3F89 /* UIColor+BTPalette.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BTPalette.h"; sourceTree = "<group>"; };
+		729517191A2D55E800F2CC53 /* BTDrinkSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDrinkSelectionViewController.h; sourceTree = "<group>"; };
+		7295171A1A2D55E800F2CC53 /* BTDrinkSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDrinkSelectionViewController.m; sourceTree = "<group>"; };
+		729517201A2D57BD00F2CC53 /* BTDrinkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDrinkCell.h; sourceTree = "<group>"; };
+		729517211A2D57BD00F2CC53 /* BTDrinkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDrinkCell.m; sourceTree = "<group>"; };
+		729517231A2D5B8A00F2CC53 /* BTDrinkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDrinkManager.h; sourceTree = "<group>"; };
+		729517241A2D5B8A00F2CC53 /* BTDrinkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDrinkManager.m; sourceTree = "<group>"; };
+		729517261A2D5C6700F2CC53 /* DrinkList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrinkList.plist; sourceTree = "<group>"; };
 		72989FA419DF61E100AE602B /* CBUUID+StringExtraction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CBUUID+StringExtraction.h"; sourceTree = "<group>"; };
 		72989FA519DF61E100AE602B /* CBUUID+StringExtraction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CBUUID+StringExtraction.m"; sourceTree = "<group>"; };
 		72989FA619DF61E100AE602B /* LGBluetooth.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LGBluetooth.h; sourceTree = "<group>"; };
@@ -85,12 +100,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7235ADD71A2D1AA8000D3F89 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				7235ADD81A2D1B0B000D3F89 /* BTDrink.h */,
+				7235ADD91A2D1B0B000D3F89 /* BTDrink.m */,
+				7235ADDC1A2D1BB9000D3F89 /* UIColor+BTPalette.h */,
+				729517231A2D5B8A00F2CC53 /* BTDrinkManager.h */,
+				729517241A2D5B8A00F2CC53 /* BTDrinkManager.m */,
+				729517261A2D5C6700F2CC53 /* DrinkList.plist */,
+			);
+			name = "Data Model";
+			sourceTree = "<group>";
+		};
 		7243A48819DF5754005887A6 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
 				72989FA319DF61E100AE602B /* LGBluetooth */,
 			);
 			name = Submodules;
+			sourceTree = "<group>";
+		};
+		7295171C1A2D576000F2CC53 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				729517201A2D57BD00F2CC53 /* BTDrinkCell.h */,
+				729517211A2D57BD00F2CC53 /* BTDrinkCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 		72989FA319DF61E100AE602B /* LGBluetooth */ = {
@@ -136,11 +173,15 @@
 		72C701FB19DE4DB900771534 /* bartenderClient */ = {
 			isa = PBXGroup;
 			children = (
+				7295171C1A2D576000F2CC53 /* Cells */,
+				7235ADD71A2D1AA8000D3F89 /* Data Model */,
 				7243A48819DF5754005887A6 /* Submodules */,
 				72C7020019DE4DB900771534 /* AppDelegate.h */,
 				72C7020119DE4DB900771534 /* AppDelegate.m */,
 				72C7020319DE4DB900771534 /* ViewController.h */,
 				72C7020419DE4DB900771534 /* ViewController.m */,
+				729517191A2D55E800F2CC53 /* BTDrinkSelectionViewController.h */,
+				7295171A1A2D55E800F2CC53 /* BTDrinkSelectionViewController.m */,
 				72C7022219DE4E9500771534 /* BTBluetoothManager.h */,
 				72C7022319DE4E9500771534 /* BTBluetoothManager.m */,
 				72C7020619DE4DB900771534 /* Main.storyboard */,
@@ -260,6 +301,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72C7020819DE4DB900771534 /* Main.storyboard in Resources */,
+				729517271A2D5C6700F2CC53 /* DrinkList.plist in Resources */,
 				72C7020D19DE4DB900771534 /* LaunchScreen.xib in Resources */,
 				72C7020A19DE4DB900771534 /* Images.xcassets in Resources */,
 			);
@@ -279,14 +321,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				729517251A2D5B8A00F2CC53 /* BTDrinkManager.m in Sources */,
+				7295171B1A2D55E800F2CC53 /* BTDrinkSelectionViewController.m in Sources */,
 				72989FB419DF61E100AE602B /* LGPeripheral.m in Sources */,
 				72C7020519DE4DB900771534 /* ViewController.m in Sources */,
 				72989FB119DF61E100AE602B /* CBUUID+StringExtraction.m in Sources */,
 				72989FB219DF61E100AE602B /* LGCentralManager.m in Sources */,
 				72C7020219DE4DB900771534 /* AppDelegate.m in Sources */,
+				729517221A2D57BD00F2CC53 /* BTDrinkCell.m in Sources */,
 				72C7022419DE4E9500771534 /* BTBluetoothManager.m in Sources */,
 				72989FB519DF61E100AE602B /* LGService.m in Sources */,
 				72C701FF19DE4DB900771534 /* main.m in Sources */,
+				7235ADDA1A2D1B0B000D3F89 /* BTDrink.m in Sources */,
 				72989FB619DF61E100AE602B /* LGUtils.m in Sources */,
 				72989FB319DF61E100AE602B /* LGCharacteristic.m in Sources */,
 			);
@@ -417,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = bartenderClient/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -428,6 +475,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = bartenderClient/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";

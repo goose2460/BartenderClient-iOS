@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A379a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -13,25 +15,142 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBm-NM-koD">
-                                <rect key="frame" x="170" y="353" width="35" height="30"/>
-                                <state key="normal" title="Scan">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="buttonPress:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2gQ-gl-7WY"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Connecting..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y3B-qw-Vyg">
+                                <rect key="frame" x="168" y="358" width="264" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="264" id="Pig-LZ-YBj"/>
+                                    <constraint firstAttribute="height" constant="59" id="epU-t1-owm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="33"/>
+                                <color key="textColor" red="0.20392156862745098" green="0.59607843137254901" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fjx-kH-cSl">
+                                <rect key="frame" x="250" y="250" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="W4l-df-7hq"/>
+                                    <constraint firstAttribute="width" constant="100" id="pIE-ES-L8U"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="50"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please turn on Bluetooth" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3p-qa-quh">
+                                <rect key="frame" x="117" y="444" width="367" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="367" id="E8g-W9-wF7"/>
+                                    <constraint firstAttribute="height" constant="59" id="Nmm-q6-oXz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
+                                <color key="textColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fjx-kH-cSl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="GEe-yc-BoD"/>
+                            <constraint firstItem="h3p-qa-quh" firstAttribute="top" secondItem="Y3B-qw-Vyg" secondAttribute="bottom" constant="27" id="TTB-dG-ZfU"/>
+                            <constraint firstItem="fjx-kH-cSl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="VIj-8A-8fP"/>
+                            <constraint firstItem="h3p-qa-quh" firstAttribute="centerX" secondItem="Y3B-qw-Vyg" secondAttribute="centerX" id="ZX8-Hx-gTk"/>
+                            <constraint firstItem="Y3B-qw-Vyg" firstAttribute="centerX" secondItem="fjx-kH-cSl" secondAttribute="centerX" id="cWe-TN-dJU"/>
+                            <constraint firstItem="Y3B-qw-Vyg" firstAttribute="top" secondItem="fjx-kH-cSl" secondAttribute="bottom" constant="8" symbolic="YES" id="vjk-Ab-ZiL"/>
+                        </constraints>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bluetoothMessage" destination="h3p-qa-quh" id="6j9-Mj-mmO"/>
+                        <outlet property="statusLabel" destination="Y3B-qw-Vyg" id="mLg-IF-FZx"/>
+                        <outlet property="statusView" destination="fjx-kH-cSl" id="HRP-Q3-J8f"/>
+                        <segue destination="bk5-Lu-29Z" kind="presentation" identifier="toDrinkSelection" modalTransitionStyle="crossDissolve" id="PwC-Qa-kiX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Drink Selection View Controller-->
+        <scene sceneID="Qm5-QB-dge">
+            <objects>
+                <viewController id="bk5-Lu-29Z" customClass="BTDrinkSelectionViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ndh-yV-FsV"/>
+                        <viewControllerLayoutGuide type="bottom" id="PMk-q9-HaQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="pws-ft-zak">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eh4-t7-K2N">
+                                <rect key="frame" x="0.0" y="425" width="600" height="175"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="w2U-uu-Gb7">
+                                    <size key="itemSize" width="125" height="125"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="25" minY="25" maxX="25" maxY="25"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="drinkItem" id="hIE-Ea-gor" customClass="BTDrinkCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="125" height="125"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="s9j-kR-ouA">
+                                                    <rect key="frame" x="0.0" y="28" width="125" height="74"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Watermelon
+Spritz</string>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="s9j-kR-ouA" firstAttribute="leading" secondItem="hIE-Ea-gor" secondAttribute="leading" id="0yj-hO-zfr"/>
+                                            <constraint firstItem="s9j-kR-ouA" firstAttribute="centerY" secondItem="hIE-Ea-gor" secondAttribute="centerY" constant="2.5" id="6h9-nI-9HV"/>
+                                            <constraint firstItem="s9j-kR-ouA" firstAttribute="top" secondItem="hIE-Ea-gor" secondAttribute="topMargin" constant="20" id="Ogv-0o-DRC"/>
+                                            <constraint firstAttribute="trailing" secondItem="s9j-kR-ouA" secondAttribute="trailing" id="Z60-xH-LWK"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <real key="value" value="62.5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <outlet property="titleTextView" destination="s9j-kR-ouA" id="BAc-W5-brA"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="bk5-Lu-29Z" id="JuZ-sP-cVZ"/>
+                                    <outlet property="delegate" destination="bk5-Lu-29Z" id="rxm-7Q-cJW"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PMk-q9-HaQ" firstAttribute="top" secondItem="eh4-t7-K2N" secondAttribute="bottom" id="cPx-cd-FBn"/>
+                            <constraint firstItem="eh4-t7-K2N" firstAttribute="top" secondItem="ndh-yV-FsV" secondAttribute="bottom" constant="405" id="fzV-dM-Skr"/>
+                            <constraint firstItem="eh4-t7-K2N" firstAttribute="leading" secondItem="pws-ft-zak" secondAttribute="leadingMargin" constant="-16" id="g8E-aV-1Ib"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eh4-t7-K2N" secondAttribute="trailing" constant="-16" id="g8G-Rd-q0j"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="drinkSelectionCollectionView" destination="eh4-t7-K2N" id="fQI-vu-tSV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="886-9X-DfG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1115" y="218"/>
         </scene>
     </scenes>
 </document>
