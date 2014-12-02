@@ -13,6 +13,6 @@
 
 +(BTBluetoothManager*)sharedInstance;
 
-- (void)attemptBluetoothConnection;
+- (void)attemptBluetoothConnectionWithCompletion:(void(^)(NSError* error))completion;
 
 @end

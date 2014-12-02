@@ -8,6 +8,8 @@
 
 #import "BTBluetoothManager.h"
 
+#define BARTENDER_DEVICE_NAME @"UART"
+
 
 @interface BTBluetoothManager() {
     
@@ -27,51 +29,24 @@ static BTBluetoothManager* gSharedInstance = nil;
     return gSharedInstance;
 }
 
-- (void)attemptBluetoothConnection{
-    [self scanForPeripheralsByInterval:5 completion:^(NSArray *peripherals) {
+- (void)attemptBluetoothConnectionWithCompletion:(void(^)(NSError* error))completion{
+    [self scanForPeripheralsByInterval:2 completion:^(NSArray *peripherals) {
         if (peripherals.count){
-            [self testPeripheral:[peripherals objectAtIndex:0]];
-        }
-    }];
-}
-
-
-- (void)testPeripheral:(LGPeripheral *)peripheral
-{
-    // First of all connecting to peripheral
-    [peripheral connectWithCompletion:^(NSError *error) {
-        // Discovering services of peripheral
-        [peripheral discoverServicesWithCompletion:^(NSArray *services, NSError *error) {
-            for (LGService *service in services) {
-                // Finding out our service
-                if ([service.UUIDString isEqualToString:@"5ec0"]) {
-                    // Discovering characteristics of our service
-                    [service discoverCharacteristicsWithCompletion:^(NSArray *characteristics, NSError *error) {
-                        // We need to count down completed operations for disconnecting
-                        __block int i = 0;
-                        for (LGCharacteristic *charact in characteristics) {
-                            // cef9 is a writabble characteristic, lets test writting
-                            if ([charact.UUIDString isEqualToString:@"cef9"]) {
-                                [charact writeByte:0xFF completion:^(NSError *error) {
-                                    if (++i == 3) {
-                                        // finnally disconnecting
-                                        [peripheral disconnectWithCompletion:nil];
-                                    }
-                                }];
-                            } else {
-                                // Other characteristics are readonly, testing read
-                                [charact readValueWithBlock:^(NSData *data, NSError *error) {
-                                    if (++i == 3) {
-                                        // finnally disconnecting
-                                        [peripheral disconnectWithCompletion:nil];
-                                    }
-                                }];
-                            }
+            for (LGPeripheral *p in peripherals){
+                if ([p.name isEqualToString:BARTENDER_DEVICE_NAME]){
+                    [p connectWithCompletion:^(NSError *error) {
+                        if (completion){
+                            completion(error);
                         }
                     }];
+                    return;
                 }
             }
-        }];
+        }
+        NSMutableDictionary* details = [NSMutableDictionary dictionary];
+        [details setValue:@"Could not connect to the Bartender.  Does not appear to be broadcasting." forKey:NSLocalizedDescriptionKey];
+        NSError *nothingFoundError = [NSError errorWithDomain:@"bluetooth" code:200 userInfo:details];
+        completion(nothingFoundError);
     }];
 }
 
