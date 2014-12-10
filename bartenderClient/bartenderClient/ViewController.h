@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BTBluetoothManager.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<BTBluetoothManagerDelegate>
 
 
 @end

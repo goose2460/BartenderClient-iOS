@@ -15,6 +15,8 @@
 @interface BTDrinkSelectionViewController (){
     IBOutlet UICollectionView *drinkSelectionCollectionView;
     IBOutlet UIButton *createDrinkButton;
+    IBOutlet UIView *drinkIngredientView1;
+    
 }
 
 @end
@@ -29,6 +31,35 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)buildDrink:(id)sender{
+    //build drink given the list
+    [[BTDrinkManager sharedInstance] buildDrinkFromList];
+}
+
+#pragma mark animation and core graphics helper methods
+
+- (void)animateAndShrinkCell:(UICollectionViewCell *)cell{
+    UIImageView *cellImageView = [[UIImageView alloc] initWithFrame:[drinkSelectionCollectionView convertRect:cell.frame toView:self.view]];
+    cellImageView.image = [self imageWithView:cell];
+    [self.view addSubview:cellImageView];
+    cell.hidden = true;
+    [UIView animateWithDuration:3.0 animations:^{
+        [cellImageView setTransform:CGAffineTransformMakeTranslation(0, -200)];
+    }];
+}
+
+- (UIImage *) imageWithView:(UIView *)view
+{
+    UIGraphicsBeginImageContextWithOptions(view.bounds.size, view.opaque, 0.0);
+    [view.layer renderInContext:UIGraphicsGetCurrentContext()];
+    
+    UIImage * img = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    
+    return img;
 }
 
 #pragma mark collection view data source
@@ -50,8 +81,8 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSArray *drinkList = [[BTDrinkManager sharedInstance] getDrinkList];
     [[BTDrinkManager sharedInstance] addDrinkToSelectedList:[drinkList objectAtIndex:indexPath.row]];
-    [createDrinkButton setTitle:[NSString stringWithFormat:@"Create %d Ingredient Drink",[[[BTDrinkManager sharedInstance] getSelectedDrinkList] count]] forState:UIControlStateNormal];
-    
+    [createDrinkButton setTitle:[NSString stringWithFormat:@"Create %ld Ingredient Drink",(unsigned long)[[[BTDrinkManager sharedInstance] getSelectedDrinkList] count]] forState:UIControlStateNormal];
+    [self animateAndShrinkCell:[collectionView cellForItemAtIndexPath:indexPath]];
 }
 
 @end

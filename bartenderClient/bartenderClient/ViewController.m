@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "BTBluetoothManager.h"
 
 @interface ViewController (){
 
@@ -23,13 +22,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    //begin observation of bluetooth radio
-    NSSet *centralReadyKeyPaths = [BTBluetoothManager keyPathsForValuesAffectingCentralReady];
-    for (NSString *keyPath in centralReadyKeyPaths){
-        [[BTBluetoothManager sharedInstance] addObserver:self forKeyPath:keyPath options:NSKeyValueObservingOptionNew context:nil];
-    }
-    
-    [self performSelector:@selector(attemptConnection) withObject:nil afterDelay:2.1];
+    [[BTBluetoothManager sharedInstance] initialize];
+    [[BTBluetoothManager sharedInstance] setDelegate:self];
+//override point for non-bluetooth device (simulator)
+#if NOBT
+    [self attemptConnection];
+#endif
 }
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -46,20 +44,10 @@
 }
 
 - (void)attemptConnection{
-#if DEBUG
+#if NOBT
     [self animateViewOut];
 #else
-    if ([[BTBluetoothManager sharedInstance] isCentralReady]){
-        [[BTBluetoothManager sharedInstance] attemptBluetoothConnectionWithCompletion:^(NSError *error) {
-            if (!error){
-                [self animateViewOut];
-            }
-            else{
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:error.localizedDescription delegate:self cancelButtonTitle:@"Try Again" otherButtonTitles:@"Cancel",nil];
-                [alert show];
-            }
-        }];
-    }
+    [[BTBluetoothManager sharedInstance] attemptBluetoothConnection];
 #endif
 
 }
@@ -79,12 +67,17 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark KVO
+#pragma mark bluetooth manager
 
--(void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context{
-    if ([[BTBluetoothManager keyPathsForValuesAffectingCentralReady] containsObject:keyPath]){
-        bluetoothMessage.hidden = [[BTBluetoothManager sharedInstance] isCentralReady];
+- (void)BTRadioChanged:(BOOL)on{
+    bluetoothMessage.hidden = on;
+    if (on){
+        [self attemptConnection];
     }
+}
+
+- (void)connectionEstablished{
+    [self animateViewOut];
 }
 
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14B17" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -144,11 +144,29 @@ Spritz</string>
                                 <state key="normal" title="Create X Ingredient Drink">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buildDrink:" destination="bk5-Lu-29Z" eventType="touchUpInside" id="iCK-GN-loI"/>
+                                </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uf-kd-nvk">
+                                <rect key="frame" x="275" y="275" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="H6G-bu-B2W"/>
+                                    <constraint firstAttribute="width" constant="50" id="JOm-3y-YlT"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="3uf-kd-nvk" firstAttribute="centerY" secondItem="pws-ft-zak" secondAttribute="centerY" id="GyP-La-ZcX"/>
                             <constraint firstItem="vDc-N9-64z" firstAttribute="top" secondItem="ndh-yV-FsV" secondAttribute="bottom" constant="207" id="Naz-Fx-L9M"/>
+                            <constraint firstItem="3uf-kd-nvk" firstAttribute="centerX" secondItem="vDc-N9-64z" secondAttribute="centerX" id="aql-xQ-iPt"/>
                             <constraint firstItem="PMk-q9-HaQ" firstAttribute="top" secondItem="eh4-t7-K2N" secondAttribute="bottom" id="cPx-cd-FBn"/>
                             <constraint firstItem="eh4-t7-K2N" firstAttribute="top" secondItem="ndh-yV-FsV" secondAttribute="bottom" constant="405" id="fzV-dM-Skr"/>
                             <constraint firstItem="eh4-t7-K2N" firstAttribute="leading" secondItem="pws-ft-zak" secondAttribute="leadingMargin" constant="-16" id="g8E-aV-1Ib"/>
@@ -158,6 +176,7 @@ Spritz</string>
                     </view>
                     <connections>
                         <outlet property="createDrinkButton" destination="vDc-N9-64z" id="Lcb-AV-UPO"/>
+                        <outlet property="drinkIngredientView1" destination="3uf-kd-nvk" id="bhK-Ij-2eT"/>
                         <outlet property="drinkSelectionCollectionView" destination="eh4-t7-K2N" id="fQI-vu-tSV"/>
                     </connections>
                 </viewController>
