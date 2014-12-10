@@ -15,6 +15,6 @@
 -(NSArray*)getDrinkList;
 -(NSArray*)getSelectedDrinkList;
 -(void)addDrinkToSelectedList:(BTDrink*)drink;
--(void)createDrink;
+-(void)buildDrinkFromList;
 
 @end

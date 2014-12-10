@@ -8,6 +8,7 @@
 
 #import "BTDrinkManager.h"
 #import "UIColor+BTPalette.h"
+#import "BTBluetoothManager.h"
 
 @implementation BTDrinkManager
 static BTDrinkManager* gSharedInstance = nil;
@@ -57,8 +58,15 @@ NSMutableArray *selectedDrinkArray;
     }
 }
 
--(void)createDrink{
-    //bluetooth code here
+-(void)buildDrinkFromList{
+    //encode the list to comma separated
+    NSMutableArray *drinkCodes = [NSMutableArray new];
+    for (BTDrink *d in selectedDrinkArray){
+        [drinkCodes addObject:[NSNumber numberWithInteger:d.identifier]];
+    }
+    [drinkCodes sortUsingSelector:@selector(compare:)];
+    NSString *finalDataString = [NSString stringWithFormat:@"%@*", [drinkCodes componentsJoinedByString:@","]];
+    [[BTBluetoothManager sharedInstance] writeStringData:finalDataString];
 }
 
 @end
