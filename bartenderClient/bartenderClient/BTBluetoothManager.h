@@ -8,11 +8,24 @@
 
 #import <Foundation/Foundation.h>
 #import "LGBluetooth.h"
+#import "UARTPeripheral.h"
+#import <CoreBluetooth/CoreBluetooth.h>
 
-@interface BTBluetoothManager : LGCentralManager
+@protocol BTBluetoothManagerDelegate
+
+- (void)BTRadioChanged:(BOOL) on;
+- (void)connectionEstablished;
+
+@end
+
+@interface BTBluetoothManager : NSObject<UARTPeripheralDelegate,CBCentralManagerDelegate>
+
+@property (nonatomic,weak) id<BTBluetoothManagerDelegate> delegate;
 
 +(BTBluetoothManager*)sharedInstance;
 
-- (void)attemptBluetoothConnectionWithCompletion:(void(^)(NSError* error))completion;
+- (void)attemptBluetoothConnection;
+- (void)initialize;
+- (void)writeStringData:(NSString*) stringData;
 
 @end
