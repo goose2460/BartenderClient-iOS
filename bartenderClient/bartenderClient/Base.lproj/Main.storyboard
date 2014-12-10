@@ -135,25 +135,82 @@ Spritz</string>
                                     <outlet property="delegate" destination="bk5-Lu-29Z" id="rxm-7Q-cJW"/>
                                 </connections>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDc-N9-64z">
-                                <rect key="frame" x="214" y="227" width="172" height="30"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDc-N9-64z">
+                                <rect key="frame" x="214" y="163" width="172" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="Cey-A3-1Qi"/>
-                                    <constraint firstAttribute="width" constant="172" id="MTl-hg-xfx"/>
+                                    <constraint firstAttribute="height" constant="30" id="Vsy-Dt-iXg"/>
+                                    <constraint firstAttribute="width" constant="172" id="q3J-Kc-Vtt"/>
                                 </constraints>
-                                <state key="normal" title="Create X Ingredient Drink">
+                                <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="22"/>
+                                <state key="normal" title="Build Drink">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buildDrink:" destination="bk5-Lu-29Z" eventType="touchUpInside" id="iCK-GN-loI"/>
                                 </connections>
                             </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zj9-MD-ZWw">
+                                <rect key="frame" x="235" y="235" width="130" height="130"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="VTb-cw-UNc"/>
+                                    <constraint firstAttribute="height" constant="130" id="zO5-FJ-7GX"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="65"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iVE-hq-3dv">
+                                <rect key="frame" x="245" y="245" width="110" height="110"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="APr-R6-wsD"/>
+                                    <constraint firstAttribute="height" constant="110" id="vM7-y7-a5R"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="55"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xus-dY-tOy">
+                                <rect key="frame" x="255" y="255" width="90" height="90"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="90" id="HnU-aU-ALw"/>
+                                    <constraint firstAttribute="height" constant="90" id="TvL-PN-Qka"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="90" id="cHq-yg-txj"/>
+                                    <constraint firstAttribute="width" constant="90" id="qmH-37-whD"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="45"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZJd-Qr-GIu">
+                                <rect key="frame" x="265" y="265" width="70" height="70"/>
+                                <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="70" id="E3v-JV-Svo"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="OKY-rl-qai"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="70" id="hAw-vC-Nme"/>
+                                    <constraint firstAttribute="width" constant="70" id="rxz-1i-QKj"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="35"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                             <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3uf-kd-nvk">
                                 <rect key="frame" x="275" y="275" width="50" height="50"/>
                                 <color key="backgroundColor" red="0.20392156859999999" green="0.59607843140000005" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="H6G-bu-B2W"/>
-                                    <constraint firstAttribute="width" constant="50" id="JOm-3y-YlT"/>
+                                    <constraint firstAttribute="height" constant="50" id="0Cf-WY-EZh"/>
+                                    <constraint firstAttribute="width" constant="50" id="wzA-qp-UwZ"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -164,19 +221,33 @@ Spritz</string>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="3uf-kd-nvk" firstAttribute="centerY" secondItem="pws-ft-zak" secondAttribute="centerY" id="GyP-La-ZcX"/>
-                            <constraint firstItem="vDc-N9-64z" firstAttribute="top" secondItem="ndh-yV-FsV" secondAttribute="bottom" constant="207" id="Naz-Fx-L9M"/>
-                            <constraint firstItem="3uf-kd-nvk" firstAttribute="centerX" secondItem="vDc-N9-64z" secondAttribute="centerX" id="aql-xQ-iPt"/>
+                            <constraint firstItem="vDc-N9-64z" firstAttribute="centerX" secondItem="3uf-kd-nvk" secondAttribute="centerX" id="1NG-LC-yAy"/>
+                            <constraint firstItem="iVE-hq-3dv" firstAttribute="centerY" secondItem="Zj9-MD-ZWw" secondAttribute="centerY" id="2mc-5J-ubA"/>
+                            <constraint firstItem="iVE-hq-3dv" firstAttribute="centerX" secondItem="Zj9-MD-ZWw" secondAttribute="centerX" id="ACS-ZL-bLQ"/>
+                            <constraint firstItem="ZJd-Qr-GIu" firstAttribute="centerX" secondItem="xus-dY-tOy" secondAttribute="centerX" id="DFg-qn-g1n"/>
+                            <constraint firstItem="eh4-t7-K2N" firstAttribute="top" secondItem="iVE-hq-3dv" secondAttribute="bottom" constant="70" id="IEP-OU-84m"/>
+                            <constraint firstItem="3uf-kd-nvk" firstAttribute="centerY" secondItem="xus-dY-tOy" secondAttribute="centerY" id="Ntd-py-fw0"/>
+                            <constraint firstItem="vDc-N9-64z" firstAttribute="centerX" secondItem="eh4-t7-K2N" secondAttribute="centerX" id="Qy9-ay-ckJ"/>
                             <constraint firstItem="PMk-q9-HaQ" firstAttribute="top" secondItem="eh4-t7-K2N" secondAttribute="bottom" id="cPx-cd-FBn"/>
+                            <constraint firstItem="eh4-t7-K2N" firstAttribute="top" secondItem="3uf-kd-nvk" secondAttribute="bottom" constant="100" id="crJ-5Y-ULJ"/>
                             <constraint firstItem="eh4-t7-K2N" firstAttribute="top" secondItem="ndh-yV-FsV" secondAttribute="bottom" constant="405" id="fzV-dM-Skr"/>
                             <constraint firstItem="eh4-t7-K2N" firstAttribute="leading" secondItem="pws-ft-zak" secondAttribute="leadingMargin" constant="-16" id="g8E-aV-1Ib"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eh4-t7-K2N" secondAttribute="trailing" constant="-16" id="g8G-Rd-q0j"/>
-                            <constraint firstItem="vDc-N9-64z" firstAttribute="centerX" secondItem="eh4-t7-K2N" secondAttribute="centerX" id="ksy-b6-e7l"/>
+                            <constraint firstItem="3uf-kd-nvk" firstAttribute="centerX" secondItem="ZJd-Qr-GIu" secondAttribute="centerX" id="gn0-9H-Hlz"/>
+                            <constraint firstItem="eh4-t7-K2N" firstAttribute="top" secondItem="Zj9-MD-ZWw" secondAttribute="bottom" constant="60" id="kKX-Iq-AG7"/>
+                            <constraint firstItem="eh4-t7-K2N" firstAttribute="top" secondItem="ZJd-Qr-GIu" secondAttribute="bottom" constant="90" id="o0N-A0-Zd8"/>
+                            <constraint firstItem="eh4-t7-K2N" firstAttribute="top" secondItem="xus-dY-tOy" secondAttribute="bottom" constant="80" id="oab-lr-HTa"/>
+                            <constraint firstItem="xus-dY-tOy" firstAttribute="top" secondItem="vDc-N9-64z" secondAttribute="bottom" constant="62" id="wPo-21-Hx8"/>
+                            <constraint firstItem="iVE-hq-3dv" firstAttribute="centerX" secondItem="3uf-kd-nvk" secondAttribute="centerX" id="xTm-0v-5uP"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="createDrinkButton" destination="vDc-N9-64z" id="Lcb-AV-UPO"/>
                         <outlet property="drinkIngredientView1" destination="3uf-kd-nvk" id="bhK-Ij-2eT"/>
+                        <outlet property="drinkIngredientView2" destination="ZJd-Qr-GIu" id="sEa-fO-VxD"/>
+                        <outlet property="drinkIngredientView3" destination="xus-dY-tOy" id="I9A-qc-wOj"/>
+                        <outlet property="drinkIngredientView4" destination="iVE-hq-3dv" id="ovJ-Dq-0hv"/>
+                        <outlet property="drinkIngredientView5" destination="Zj9-MD-ZWw" id="KT6-ai-s6H"/>
                         <outlet property="drinkSelectionCollectionView" destination="eh4-t7-K2N" id="fQI-vu-tSV"/>
                     </connections>
                 </viewController>

@@ -10,4 +10,9 @@
 
 @implementation BTDrinkCell
 
+- (void)prepareForReuse{
+    self.hidden = false;
+    self.titleTextView.alpha = 1.0;
+}
+
 @end
