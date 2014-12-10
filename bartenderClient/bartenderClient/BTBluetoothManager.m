@@ -12,7 +12,6 @@
 
 
 @interface BTBluetoothManager() {
-    LGCharacteristic *writeSerialCharacteristic;
     UARTPeripheral *currentPeripheral;
     CBCentralManager *cm;
 }

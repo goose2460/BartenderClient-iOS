@@ -1,6 +1,3 @@
-[submodule "Submodules/LGBluetooth"]
-	path = Submodules/LGBluetooth
-	url = https://github.com/bartender-robot/LGBluetooth
 [submodule "Submodules/Bluefruit Connect"]
 	path = Submodules/Bluefruit Connect
 	url = https://github.com/bartender-robot/Bluefruit_LE_Connect

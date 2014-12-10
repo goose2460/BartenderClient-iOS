@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "LGBluetooth.h"
 #import "UARTPeripheral.h"
 #import <CoreBluetooth/CoreBluetooth.h>
 

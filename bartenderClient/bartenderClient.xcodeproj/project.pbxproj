@@ -12,12 +12,6 @@
 		729517221A2D57BD00F2CC53 /* BTDrinkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 729517211A2D57BD00F2CC53 /* BTDrinkCell.m */; };
 		729517251A2D5B8A00F2CC53 /* BTDrinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 729517241A2D5B8A00F2CC53 /* BTDrinkManager.m */; };
 		729517271A2D5C6700F2CC53 /* DrinkList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 729517261A2D5C6700F2CC53 /* DrinkList.plist */; };
-		72989FB119DF61E100AE602B /* CBUUID+StringExtraction.m in Sources */ = {isa = PBXBuildFile; fileRef = 72989FA519DF61E100AE602B /* CBUUID+StringExtraction.m */; };
-		72989FB219DF61E100AE602B /* LGCentralManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 72989FA819DF61E100AE602B /* LGCentralManager.m */; };
-		72989FB319DF61E100AE602B /* LGCharacteristic.m in Sources */ = {isa = PBXBuildFile; fileRef = 72989FAA19DF61E100AE602B /* LGCharacteristic.m */; };
-		72989FB419DF61E100AE602B /* LGPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 72989FAC19DF61E100AE602B /* LGPeripheral.m */; };
-		72989FB519DF61E100AE602B /* LGService.m in Sources */ = {isa = PBXBuildFile; fileRef = 72989FAE19DF61E100AE602B /* LGService.m */; };
-		72989FB619DF61E100AE602B /* LGUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 72989FB019DF61E100AE602B /* LGUtils.m */; };
 		72C701FF19DE4DB900771534 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C701FE19DE4DB900771534 /* main.m */; };
 		72C7020219DE4DB900771534 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C7020119DE4DB900771534 /* AppDelegate.m */; };
 		72C7020519DE4DB900771534 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C7020419DE4DB900771534 /* ViewController.m */; };
@@ -27,6 +21,7 @@
 		72C7021919DE4DB900771534 /* bartenderClientTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C7021819DE4DB900771534 /* bartenderClientTests.m */; };
 		72C7022419DE4E9500771534 /* BTBluetoothManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C7022319DE4E9500771534 /* BTBluetoothManager.m */; };
 		72C7022819DE509B00771534 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72C7022719DE509B00771534 /* CoreBluetooth.framework */; };
+		72C8BB071A37FEF40010A312 /* UARTPeripheral.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C8BB061A37FEF40010A312 /* UARTPeripheral.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +74,8 @@
 		72C7022219DE4E9500771534 /* BTBluetoothManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTBluetoothManager.h; sourceTree = "<group>"; };
 		72C7022319DE4E9500771534 /* BTBluetoothManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTBluetoothManager.m; sourceTree = "<group>"; };
 		72C7022719DE509B00771534 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		72C8BB051A37FEF40010A312 /* UARTPeripheral.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UARTPeripheral.h; path = "../../Submodules/Bluefruit Connect/BLE Test/UARTPeripheral.h"; sourceTree = "<group>"; };
+		72C8BB061A37FEF40010A312 /* UARTPeripheral.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = UARTPeripheral.m; path = "../../Submodules/Bluefruit Connect/BLE Test/UARTPeripheral.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +113,7 @@
 		7243A48819DF5754005887A6 /* Submodules */ = {
 			isa = PBXGroup;
 			children = (
+				72D0C1761A3659E0001C7191 /* Bluefruit */,
 				72989FA319DF61E100AE602B /* LGBluetooth */,
 			);
 			name = Submodules;
@@ -216,6 +214,15 @@
 				72C7021719DE4DB900771534 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		72D0C1761A3659E0001C7191 /* Bluefruit */ = {
+			isa = PBXGroup;
+			children = (
+				72C8BB051A37FEF40010A312 /* UARTPeripheral.h */,
+				72C8BB061A37FEF40010A312 /* UARTPeripheral.m */,
+			);
+			name = Bluefruit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,18 +330,13 @@
 			files = (
 				729517251A2D5B8A00F2CC53 /* BTDrinkManager.m in Sources */,
 				7295171B1A2D55E800F2CC53 /* BTDrinkSelectionViewController.m in Sources */,
-				72989FB419DF61E100AE602B /* LGPeripheral.m in Sources */,
 				72C7020519DE4DB900771534 /* ViewController.m in Sources */,
-				72989FB119DF61E100AE602B /* CBUUID+StringExtraction.m in Sources */,
-				72989FB219DF61E100AE602B /* LGCentralManager.m in Sources */,
+				72C8BB071A37FEF40010A312 /* UARTPeripheral.m in Sources */,
 				72C7020219DE4DB900771534 /* AppDelegate.m in Sources */,
 				729517221A2D57BD00F2CC53 /* BTDrinkCell.m in Sources */,
 				72C7022419DE4E9500771534 /* BTBluetoothManager.m in Sources */,
-				72989FB519DF61E100AE602B /* LGService.m in Sources */,
 				72C701FF19DE4DB900771534 /* main.m in Sources */,
 				7235ADDA1A2D1B0B000D3F89 /* BTDrink.m in Sources */,
-				72989FB619DF61E100AE602B /* LGUtils.m in Sources */,
-				72989FB319DF61E100AE602B /* LGCharacteristic.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +405,7 @@
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
+					"NOBT=1",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -414,7 +417,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "72a60a42-ad21-4c79-bf9c-14ab9f87395c";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -437,8 +440,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -451,7 +454,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "72a60a42-ad21-4c79-bf9c-14ab9f87395c";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -462,11 +465,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				INFOPLIST_FILE = bartenderClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "72a60a42-ad21-4c79-bf9c-14ab9f87395c";
 			};
 			name = Debug;
 		};
@@ -474,11 +478,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_RESOURCE_RULES_PATH = "$(SDKROOT)/ResourceRules.plist";
 				INFOPLIST_FILE = bartenderClient/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE = "72a60a42-ad21-4c79-bf9c-14ab9f87395c";
 			};
 			name = Release;
 		};
