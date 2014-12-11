@@ -12,6 +12,7 @@
 		729517221A2D57BD00F2CC53 /* BTDrinkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 729517211A2D57BD00F2CC53 /* BTDrinkCell.m */; };
 		729517251A2D5B8A00F2CC53 /* BTDrinkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 729517241A2D5B8A00F2CC53 /* BTDrinkManager.m */; };
 		729517271A2D5C6700F2CC53 /* DrinkList.plist in Resources */ = {isa = PBXBuildFile; fileRef = 729517261A2D5C6700F2CC53 /* DrinkList.plist */; };
+		729B72B91A38F9B300480BAF /* BTSavedDrinkCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 729B72B81A38F9B300480BAF /* BTSavedDrinkCell.m */; };
 		72C701FF19DE4DB900771534 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C701FE19DE4DB900771534 /* main.m */; };
 		72C7020219DE4DB900771534 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C7020119DE4DB900771534 /* AppDelegate.m */; };
 		72C7020519DE4DB900771534 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72C7020419DE4DB900771534 /* ViewController.m */; };
@@ -45,6 +46,8 @@
 		729517231A2D5B8A00F2CC53 /* BTDrinkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTDrinkManager.h; sourceTree = "<group>"; };
 		729517241A2D5B8A00F2CC53 /* BTDrinkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTDrinkManager.m; sourceTree = "<group>"; };
 		729517261A2D5C6700F2CC53 /* DrinkList.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = DrinkList.plist; sourceTree = "<group>"; };
+		729B72B71A38F9B300480BAF /* BTSavedDrinkCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BTSavedDrinkCell.h; sourceTree = "<group>"; };
+		729B72B81A38F9B300480BAF /* BTSavedDrinkCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BTSavedDrinkCell.m; sourceTree = "<group>"; };
 		72C701F919DE4DB900771534 /* bartenderClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bartenderClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		72C701FD19DE4DB900771534 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		72C701FE19DE4DB900771534 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -110,6 +113,8 @@
 			children = (
 				729517201A2D57BD00F2CC53 /* BTDrinkCell.h */,
 				729517211A2D57BD00F2CC53 /* BTDrinkCell.m */,
+				729B72B71A38F9B300480BAF /* BTSavedDrinkCell.h */,
+				729B72B81A38F9B300480BAF /* BTSavedDrinkCell.m */,
 			);
 			name = Cells;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				72C8BB071A37FEF40010A312 /* UARTPeripheral.m in Sources */,
 				72C7020219DE4DB900771534 /* AppDelegate.m in Sources */,
 				729517221A2D57BD00F2CC53 /* BTDrinkCell.m in Sources */,
+				729B72B91A38F9B300480BAF /* BTSavedDrinkCell.m in Sources */,
 				72C7022419DE4E9500771534 /* BTBluetoothManager.m in Sources */,
 				72C701FF19DE4DB900771534 /* main.m in Sources */,
 				7235ADDA1A2D1B0B000D3F89 /* BTDrink.m in Sources */,

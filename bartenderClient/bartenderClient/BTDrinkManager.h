@@ -16,5 +16,7 @@
 -(NSArray*)getSelectedDrinkList;
 -(void)addDrinkToSelectedList:(BTDrink*)drink;
 -(void)buildDrinkFromList;
+-(void)saveDrinkFromListToStorageWithImage:(UIImage*)image andName:(NSString*)name;
+-(NSArray*)getSavedDrinkList;
 
 @end

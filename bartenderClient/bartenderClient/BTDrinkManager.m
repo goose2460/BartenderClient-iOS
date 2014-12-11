@@ -67,6 +67,33 @@ NSMutableArray *selectedDrinkArray;
     [drinkCodes sortUsingSelector:@selector(compare:)];
     NSString *finalDataString = [NSString stringWithFormat:@"%@*", [drinkCodes componentsJoinedByString:@","]];
     [[BTBluetoothManager sharedInstance] writeStringData:finalDataString];
+    //TODO: error handle
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:@"Your drink is being created." delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+    [alert show];
+    [selectedDrinkArray removeAllObjects];
+}
+
+-(NSArray*)getSavedDrinkList{
+    NSMutableArray *arrayFromStorage = [NSMutableArray new];
+    [arrayFromStorage addObjectsFromArray:
+    [[NSUserDefaults standardUserDefaults] objectForKey:@"savedDrinks"]];
+    for (int i = 0; i<arrayFromStorage.count; i++){
+        NSMutableDictionary *mutableDrinkInfo = [[NSMutableDictionary alloc] initWithDictionary:[arrayFromStorage objectAtIndex:i]];
+        [mutableDrinkInfo setValue:[UIImage imageWithData:[[arrayFromStorage objectAtIndex:i] valueForKey:@"imageData"]] forKey:@"image"];
+        [arrayFromStorage replaceObjectAtIndex:i withObject:mutableDrinkInfo];
+    }
+    return arrayFromStorage;
+}
+
+-(void)saveDrinkFromListToStorageWithImage:(UIImage *)image andName:(NSString *)name{
+    NSArray *drinksFromStorage = [[NSUserDefaults standardUserDefaults] objectForKey:@"savedDrinks"];
+    if (!drinksFromStorage){
+        drinksFromStorage = [NSArray new];
+    }
+    NSMutableArray *savedDrinks = [[NSMutableArray alloc] initWithArray:drinksFromStorage];
+    [savedDrinks insertObject:@{@"imageData":UIImagePNGRepresentation(image),@"name":name} atIndex:0];
+    [[NSUserDefaults standardUserDefaults] setObject:[NSArray arrayWithArray:savedDrinks] forKey:@"savedDrinks"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 @end
