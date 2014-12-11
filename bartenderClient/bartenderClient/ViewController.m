@@ -26,7 +26,7 @@
     [[BTBluetoothManager sharedInstance] setDelegate:self];
 //override point for non-bluetooth device (simulator)
 #if NOBT
-    [self attemptConnection];
+    [self performSelector:@selector(attemptConnection) withObject:nil afterDelay:3.0];
 #endif
 }
 
